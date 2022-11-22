@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'db_worker',
     'db_keeper',
     'api',
-    'rest_framework'
+    'rest_framework',
+    'drf_spectacular'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Data Base API',
+    'DESCRIPTION': 'API that shows complited disciplines',
+    'VERSION': '1.0',
+    'SERVE_INCLUDE_SCHEME': False,
+}

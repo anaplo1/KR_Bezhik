@@ -4,10 +4,11 @@ from rest_framework.views import APIView
 from .models import CompletedDiscipline
 from .serializers import CompletedDisciplineSerializer
 from db_keeper.func import getCompletedDiscipline, addCompletedDiscipline
+from drf_spectacular.utils import extend_schema
 
 
 class CompletedDisciplineView(APIView):
-
+    @extend_schema(request=CompletedDisciplineSerializer, responses=CompletedDisciplineSerializer)
 
     def get(self, request, idStudent, idDiscipline, mark):
 
