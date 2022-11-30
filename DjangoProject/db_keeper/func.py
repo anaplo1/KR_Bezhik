@@ -18,7 +18,8 @@ def addStudent(name, surname, course, group):
     con.commit()
 
     return dict(row)
-    # student = Student(name=name, surname=surname, course=course, group=group)
+    # student = Student(name
+    # =name, surname=surname, course=course, group=group)
     # student.save()
     # return student
 
