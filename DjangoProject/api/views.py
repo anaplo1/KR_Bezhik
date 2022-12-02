@@ -7,7 +7,7 @@ from db_keeper.func import getCompletedDiscipline, addCompletedDiscipline
 from drf_spectacular.utils import extend_schema
 
 
-class CompletedDisciplineView(APIView):
+class GetCompletedDisciplineView(APIView):
     @extend_schema(request=CompletedDisciplineSerializer, responses=CompletedDisciplineSerializer)
 
     def get(self, request, idStudent, idDiscipline, mark):
@@ -19,11 +19,10 @@ class CompletedDisciplineView(APIView):
         return Response(a)
 
 
-    def set(self, request, idStudent, idDiscpline, mark):
+class SetComletedDisciplineView(APIView):
+    @extend_schema(request=CompletedDisciplineSerializer, responses=CompletedDisciplineSerializer)
 
-        a = addCompletedDiscipline(idStudent, idDiscpline, mark)
-        a.idStudent = CompletedDisciplineSerializer(instance=a.idStudent).data
-        a.idDiscipline = CompletedDisciplineSerializer(instance=a.idDiscipline).data
-        a.mark = CompletedDisciplineSerializer(instance=a.mark).data
+    def get(self, request, idStudent, idDiscipline, mark):
+        a = addCompletedDiscipline(idStudent, idDiscipline, mark)
 
         return Response(a)

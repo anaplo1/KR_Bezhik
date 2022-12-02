@@ -2,6 +2,8 @@ from .models import *
 from django.db import connection
 import sqlite3
 
+#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 - Токен для гита
+
 
 #  «Создание, хранение и обработка данных о количестве изученных студентом дисциплин»
 
